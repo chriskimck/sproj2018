@@ -1,0 +1,5 @@
+Hardware Decisions:
+
+- Raspberry Pi 3 (Only portable hardware that can run tensorflow well)
+- Basic Mic compatible with Raspberry Pi
+- Basic Speaker compatible with Raspberry Pi
