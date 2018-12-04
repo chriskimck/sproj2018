@@ -5,7 +5,6 @@ Septemnber 11th, 2018:
 This week I worked on brainstorming ideas for senior projects. One was a wireless EMG monitor that can potentially be used in hospitals, since they can be portable and much easier to move, etc. Justin Jose's cousin works as a nurse and states that it would be helpful if the EMGs were wireless. Another idea and a potential front-runner is a chess board that can be played using voice recognition, in which you do not have to move the pieces and can simply say a command to move the pieces. This can be useful for blind-folded chess and just a fun project in general.
 
 Septemnber 18th, 2018:
-
 This week we decided on an idea for our project and finalized groups. We decided on ultimately going with the real-time speech source separation project utilizing deep-learning. Our only other idea that gained traction and could potentially be a good project was the voice-activated chess, other-wise known as levitating chess. The problem with that idea was the level of difficulty and the lack of usefulness of the project. Therefore, we went with Professor Keene's suggested idea and are very happy with this project for the year.
 
 
@@ -15,21 +14,29 @@ This week I worked on Abstract write-up and researching for the project. Two art
 Article: Speaker-Independent Speech Separation With Deep Attractor Netowrk
 Deep ML has had a lot of struggle with speaker-independent speech separation. However, these authors have developed a deep learning framework that is able to address the challenges imposed by arbitrary order of the target and unkonwn number of speakers in the mixture. Using time-frequency representation and a reference point created in the embedding space, the authors were able to have comparable or better performance than the state-of-the-art deep learning methods for speech seperation.
 
-Article:
+Article: Supervised Speech Separation Based on Deep Learning: An Overview
+While traditionally speech separation is studied as a signal processing problem, a more recent approach is to consider it primarily as a supervised learning problem. Here, the discriminative patterns of speech, speakers and background noise are learned from training data. This article goes in depth of the research on deep learning based supervised speech separation and discusses tricks that Frank has probably used for acoustic features such as speech enhancement. 
 
 
 October 2nd, 2018:
 This week I worked on research and looking at Frank's code for the project. I glossed over Frank's thesis and understand that there is a lot of signal processing involved in addition to the convolutional neural network implementation that Frank utilizes. I have also started to think about potential hardware choices for the project, with the Raspberry Pi 3 being the leader. These ideas have been discussed amongst the group. Two of the few articles I researched are summarized below.
 
-Article:
+Article: Cracking the Cocktail Party Problem by Multi-Beam Deep Attractor Network
+Microsoft AI and Research introduces Multi-Beam Deep Attractor Network as a solution to the Cocktail Party Problem. They state that while previous deep-learning implementations are effective, they are not practical in real-world situations. They then propose a novel and simple multi-channel speech separation system that utilizes differential beamformers and combines multi and single channel processing to largely increase the state-of-the-art performance in the cocktail party problem.
+
+Article: Speaker-Independent Speech Separation With Deep Attractor Network (Sent by Professor Keene)
+The reason why I wanted to read the previous article before going to this one is that they both utilize deep attractor networks to approach source separation. This article released on April 2018, and the previous one was March 2018. One of the main differences here is that they are focusing on single-microphone speech separation, which aligns with what we want to do. The ADANet (Anchored DANet) provides better and more stable performance than the standard DANet. We are interested in possibly implementing this if in the worst case Frank's code will not work out for real-time. 
+
 
 
 October 9th, 2018:
 This week we ordered the raspberry pi, mic and speaker that we will be using. The mic and speaker are tentative but the raspberry pi will be a permanent implementation unless we encounter problems with it. In addition, I continued to do research on the topic and below are another two summarizations of some of the articles that I've researched this past week.
 
-Article:
+Article: Deep Clustering: Discriminative Embeddings for Segmentation and Separation (Sent by Professor Keene)
+An approach to the cocktail party problem is detailed by Columnbia University people. They utilize deep clustering, an alogirthm that combines clustering and deep learning to yield good results. This is another approach we can utilize instead of CNNs in case we see that CNNs are not the best option for a real-time solution, but the CNN seems to be just fine for us. 
 
-Article:
+Article: The Cocktail Party Problem: Speech/Data Signal Separation Comparison between Backpropogation and SONN
+This paper is an extremely old one but is very cool to read and see how neural networks are not as new as I thought it was. A product of Purdue University, the authors look at a method called "Self organizing Neural networks" as a solution to the cocktail party problem. I mostly researched this article more-so because the content was interesting to me. The way that the paper was written and described is much more friendly than the ones we see in the last couple of years, and I appreciated this paper a lot, though it won't be useful for us. 
 
 
 October 16th, 2018:
@@ -37,19 +44,26 @@ This week I worked on research (final week of formal research prior to diving in
 
 
 October 23rd, 2018:
-This week I worked on constructing the presentation for next week, creating and finalizing the Gantt Chart for our group for the remainder of the semester, focusing on how to integrate the RPi with the neural network code now that we have the necessary packages installed into the RPi and starting to think about the poster for the upcoming poster session. 
+This week I worked on constructing the presentation for next week, creating and finalizing the Gantt Chart for our group for the remainder of the semester, focusing on how to integrate the RPi with the convolutional neural network model now that we have the necessary packages installed into the RPi and starting to think about the poster for the upcoming poster session. We also have identified potential other hardwares in case the RPi does not pan out for us, the primary lead being the LattePanda Alpha device, which is a very powerful device that can run tensorflow. 
 
 
 October 30th, 2018:
+This week I focused on the real-time signal processing implementation with Justin and the integration of the CNN model to the Raspberry Pi. While we are still encountering bugs with importing the model we are very close and know that it is definitely possible to port the model into the RPi. The main concern will be the lack of a GPU and the inability to operate at a latency that we want. These issues were raised up during our presentation and from listening to feedback of other presentations. 
 
 
 November 6th, 2018:
-This week I worked on constructing the poster for the upcoming
+This week I worked primarily on constructing the poster for the upcoming poster session. We have begun our tests to see whether or not the RPi would be a feasible hardware solution for a real-time implementation now that we have the model imported to the RPi and have the necessary tools to conduct testing. 
 
 November 13th, 2018:
+This week we talked about how the senior projects poster session went and how we would implement the feedback that we've received from those who gave us advice/feedback in the session. In addition, I primarily worked on the final report outline and what that would entail. We are envisioning 20-25 pages, as our project is very much a research-based one. I have continued to work on the real-time signal processing as well.
 
 
 November 20th, 2018:
+This week we've identiifed that there is an evident latency issue with the RPi and the model itself. David is working on potentially reducing/changing around things like batch_size and implementing some parameter reducing tricks to try to reduce the number of parameters while achieving similar results, and is still hopeful that we can use the RPi and not have to drop a decent amount of money to get better hardware. I am not as optimistic, and am really looking into the LattePanda Alpha as well as other potential solutions. 
 
 
 November 27th, 2018:
+This week we have allocated the final report portions in which each of us will write and have began discussions on how we envision our final presentation to look like. David has been experimenting but it seems like the RPi is not going to be a long-term hardware deicsion for our group. Justin and I are seeing if there are any non-CNN model improvements that can be further made in regards to latency. I also received a very cool/useful article from Professor Keene from the atlantic "How Restaurants Got So Loud" and am planning to incorporate that into the final presentation. I also received an article from a friend and have done research on it: a very cutting-edge approach to source separation by Facebook.
+
+Article: Neural Separation of Observed and Unobserved Distributions
+Neural Egg Separation... what kind of name is that. Nonetheless, this is a novel method that is flexible for multiple source separation problems (one being the cocktail party problem) and "achieves much better performance than other methods and was usually competitive with full-supervision". The method seems a bit too novel for us to implement as of yet, as it was literally released in November 2018, but can potentially be another alternative we can consider. 
